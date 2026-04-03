@@ -1,4 +1,4 @@
-import { Users, Activity } from 'lucide-react';
+import { Users, Activity, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
@@ -71,7 +71,66 @@ export function LeaguesTable() {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="overflow-x-auto">
+        {/* Mobile Card View */}
+        <div className="lg:hidden space-y-3">
+          {leagues.map((league) => (
+            <div
+              key={league.id}
+              onClick={() => navigate(`/leagues/${league.id}`)}
+              className="bg-gray-900/50 border border-gray-700 rounded-lg p-4 cursor-pointer hover:border-emerald-500/30 transition-all"
+            >
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex-1">
+                  <h4 className="text-white font-semibold mb-2">{league.name}</h4>
+                  <div className="flex gap-2 flex-wrap">
+                    <Badge
+                      variant={league.type === 'bet' ? 'default' : 'secondary'}
+                      className={
+                        league.type === 'bet'
+                          ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+                          : 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+                      }
+                    >
+                      {league.type === 'bet' ? 'APUESTA' : 'DIVERSIÓN'}
+                    </Badge>
+                    <Badge
+                      className={
+                        league.status === 'activa'
+                          ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+                          : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
+                      }
+                    >
+                      {league.status}
+                    </Badge>
+                  </div>
+                </div>
+                <ChevronRight className="w-5 h-5 text-gray-500" />
+              </div>
+              
+              <div className="grid grid-cols-3 gap-2 text-sm">
+                <div className="bg-gray-800 rounded p-2">
+                  <p className="text-gray-400 text-xs mb-1">Participantes</p>
+                  <p className="text-white font-medium">{league.participants}</p>
+                </div>
+                <div className="bg-gray-800 rounded p-2">
+                  <p className="text-gray-400 text-xs mb-1">Tu Rango</p>
+                  <p className="text-emerald-400 font-medium">
+                    {league.yourRank ? `#${league.yourRank}` : '-'}
+                  </p>
+                </div>
+                <div className="bg-gray-800 rounded p-2">
+                  <p className="text-gray-400 text-xs mb-1">Premio</p>
+                  <p className="text-emerald-400 font-medium">
+                    {league.prize || '-'}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop Table View */}
+        <div className="hidden lg:block overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow className="border-gray-700 hover:bg-transparent">
