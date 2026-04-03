@@ -42,7 +42,7 @@ export function Login() {
               <Trophy className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">GolTech Solutions</h1>
+              <h1 className="text-2xl font-bold text-gray-900">BetLeague</h1>
               <p className="text-sm text-gray-600">World Cup 2026</p>
             </div>
           </div>
@@ -120,12 +120,13 @@ export function Login() {
                     Recuérdame
                   </label>
                 </div>
-                <a
-                  href="#"
+                <button
+                  type="button"
+                  onClick={() => navigate('/forgot-password')}
                   className="text-sm text-emerald-600 hover:text-emerald-700 font-medium"
                 >
                   ¿Olvidaste tu contraseña?
-                </a>
+                </button>
               </div>
 
               {/* Login Button */}
@@ -147,12 +148,13 @@ export function Login() {
               <div className="text-center pt-4">
                 <p className="text-sm text-gray-600">
                   ¿No tienes una cuenta?{' '}
-                  <a
-                    href="#"
+                  <button
+                    type="button"
+                    onClick={() => navigate('/register')}
                     className="text-emerald-600 hover:text-emerald-700 font-semibold"
                   >
                     Registrarse
-                  </a>
+                  </button>
                 </p>
               </div>
             </form>

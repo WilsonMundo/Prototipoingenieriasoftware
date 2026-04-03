@@ -40,7 +40,7 @@ export function Sidebar({ activeSection = 'dashboard' }: SidebarProps) {
             <Trophy className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h1 className="text-white text-lg font-bold">GolTech Solutions</h1>
+            <h1 className="text-white text-lg font-bold">BetLeague</h1>
             <p className="text-gray-400 text-xs">World Cup 2026</p>
           </div>
         </div>

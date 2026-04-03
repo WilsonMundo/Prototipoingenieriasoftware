@@ -1,5 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router';
 import { Login } from './components/Login';
+import { Register } from './components/Register';
+import { ForgotPassword } from './components/ForgotPassword';
 import { Dashboard } from './components/Dashboard';
 import { MyLeagues } from './components/MyLeagues';
 import { LeagueDetail } from './components/LeagueDetail';
@@ -29,6 +31,14 @@ export const router = createBrowserRouter([
   {
     path: '/login',
     element: <Login />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
+  },
+  {
+    path: '/forgot-password',
+    element: <ForgotPassword />,
   },
   {
     path: '/dashboard',
