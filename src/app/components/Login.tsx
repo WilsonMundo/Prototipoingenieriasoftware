@@ -42,7 +42,7 @@ export function Login() {
               <Trophy className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">BetLeague</h1>
+              <h1 className="text-2xl font-bold text-gray-900">GolTech Solutions S.A.</h1>
               <p className="text-sm text-gray-600">World Cup 2026</p>
             </div>
           </div>
